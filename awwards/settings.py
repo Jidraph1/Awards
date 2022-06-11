@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'awards.apps.AwardsConfig',
     'cloudinary',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
