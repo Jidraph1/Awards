@@ -1,4 +1,4 @@
-from tkinter import CASCADE
+# from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField 
@@ -37,9 +37,7 @@ class Project(models.Model):
     def __str__(self):
         return self.title 
 
-class Review(models.Models):
-
-    RATE_CHOICES = [
+RATE_CHOICES = [
 	(1,'1 - Unsatisfactory'),
 	(2,'2 - Pathetic'),
 	(3,'3 - Very bad'),
@@ -51,11 +49,12 @@ class Review(models.Models):
 	(9,'9 - Excellent'),
 	(10, '10 - Perfect'), 
 ]
-
+class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete = models.CASCADE)
     design = models.PositiveSmallIntegerField(choices=RATE_CHOICES, default=5) 
     usability =models.PositiveSmallIntegerField(choices=RATE_CHOICES, default=5)  
     content = models.PositiveSmallIntegerField(choices=RATE_CHOICES, default=5)
     comment = models.CharField(max_length=250, blank=True,default='')  
-    overall = models.IntegerField(blank=True,default=0) 
+    overall = models.IntegerField(blank=True,default=0)   
+    
