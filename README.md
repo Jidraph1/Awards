@@ -1,4 +1,4 @@
-# AwardsAWWARDS
+# Awards
 Welcome to the Awards Python web application.
 
 ## Description
