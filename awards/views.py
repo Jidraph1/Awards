@@ -77,3 +77,27 @@ def submit_project(request):
         form = ProjectForm()
     
     return render(request, 'submit.html', {'form': form})
+
+def site_details(request,id):
+    project = get_object_or_404(Project,id=id)
+    
+    reviews = Review.objects.all().filter(project_id=id)
+    form = RateForm(request.POST)
+    if request.method == 'POST':
+        
+        if form.is_valid():
+            rate = form.save(commit=False)
+            rate.user = user
+            rate.project = project
+            rate.save()
+            return redirect('site_details')
+    else:
+        form = RateForm()    
+    
+    context = {
+        'project':project,
+        'form':form,
+       'reviews':reviews,
+    }
+    
+    return render(request,'site-details.html',context)
