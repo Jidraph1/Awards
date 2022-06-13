@@ -23,3 +23,20 @@ This project is built using:
 * Awwwards
 This project is also dependant on various Django extensions that make up the functionality of the application.
 
+## Bugs reported
+Apart from the slight hitches in the search bar, everything works well without an bugs and inconveninces
+
+## Acknowledgements
+The following parties have contributed greatly to this project.
+
+* Moringa School LMS content
+* Google Fonts
+* Stack Overflow
+* Lofi Music
+
+
+### Contact Information
+In case of any queries and Collaborations, reach out throught the following:
+
+jidraphkimachia1@gmail.com
+jidraph.kimachia@student.moringaschool.com
