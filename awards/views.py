@@ -101,3 +101,22 @@ def site_details(request,id):
     }
     
     return render(request,'site-details.html',context)
+
+@login_required
+def rate_project(request, id):
+    form=RateForm()
+    project = Project.objects.get(id=id)
+    user = request.user
+    # reviews = Rate.objects.all().filter(project_id=pk)
+    if request.method == 'POST':
+        form = RateForm(request.POST)
+        if form.is_valid():
+         
+            rate = form.save(commit=False)
+            rate.user = user
+            rate.project = project
+            rate.save()
+            return redirect('site_details', id)
+        
+    else:
+        form= RateForm()  
