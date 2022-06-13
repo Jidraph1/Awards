@@ -28,10 +28,10 @@ class Project(models.Model):
     country = models.CharField(max_length=100, default="")
   
 
-    # @classmethod
-    # def search_project(cls,search_term):
-    #     projects = cls.objects.filter(Q(user__username=search_term) | Q(title__icontains=search_term))
-    #     return projects  
+    @classmethod
+    def search_project(cls,search_term):
+        projects = cls.objects.filter(Q(user__username=search_term) | Q(title__icontains=search_term))
+        return projects  
       
     
     def __str__(self):
