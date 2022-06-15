@@ -33,10 +33,10 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('awawaaaard.herokuapp.com/, '127.0.0.1')
+ALLOWED_HOSTS = config('awawaaaard.herokuapp.com', '127.0.0.1')
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://awawaaaard.herokuapp.com/'
+    'https://awawaaaard.herokuapp.com'
 ]
 
 # Application definition
